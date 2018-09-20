@@ -18,6 +18,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
+        
         setLocale(LC_TIME, config('app.locale'));
 
         view()->composer('front/layout',MenuComposer::class);
